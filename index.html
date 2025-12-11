@@ -3,60 +3,81 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>아이오페 단독 프로모션</title>
+    <!-- swiper css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
 
     <!-- 헤더 -->
-    <header class="header">
-        <div class="header-inner">
-            <button type="button" class="btn-back">뒤로</button>
-            <h1 class="page-title">사은 행사</h1>
-            <button type="button" class="btn-search">검색</button>
-            <button type="button" class="btn-search">장바구니</button>
+    <header class="header" role="banner">
+        <div class="header__inner">
+            <button type="button" class="header__btn header__btn--back" aria-label="뒤로 가기"></button>
+            <h1 class="header__title">사은 행사</h1>
+            <div class="header__btn-wrap">
+                <button type="button" class="header__btn header__btn--search" aria-label="검색"></button>
+                <a href="javascript:" class="header__btn header__btn--cart" aria-label="장바구니" role="button">
+                    <span class="count" aria-label="장바구니 상품 수">1</span>
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- 메인 비주얼 -->
-    <section class="main-visual">
-        <p>2025.01.01 - 재고소진시까지</p>
-        <h2 class="event-title">아이오페 단독 프로모션</h2>
-        <p>현대면세점 단독 혜택도 만나보세요!</p>
-        <div class="visual-image"></div>
-    </section>
+    <main class="exhibition_wrap" role="main">
+        <!-- 메인 비주얼 -->
+        <section class="visual" style="background:#F3E1CC" aria-labelledby="visual-title"><!-- 배경색은 BO에서 정의 / 배경색상에 따라 폰트 컬러 변경 dark가 default :: 배경색이 어두우면 .txt-white 추가 -->
+            <p class="visual__date">2025.01.01 - 재고소진시까지</p>
+            <h2 id="visual-title" class="visual__title">아이오페 단독 프로모션</h2>
+            <p class="visual__desc">현대면세점 단독 혜택도 만나보세요!</p>
+            <figure class="visual__image">
+                <img src="./img/img-main-visual.png" alt="아이오페 프로모션 대표 이미지" />
+            </figure>
+        </section>
 
-    <!-- 탭 메뉴 -->
-    <nav class="tab-menu">
-        <ul>
-            <li class="active"><a href="">사은행사</a></li>
-            <li><a href="">추천상품</a></li>
-            <li><a href="">전체상품</a></li>
-        </ul>
-    </nav>
+        <!-- 탭 메뉴 -->
+        <nav class="tab" aria-label="페이지 탭 메뉴">
+            <ul class="tab__list" role="tablist">
+                <li class="tab__item tab__item--active" role="presentation">
+                    <a href="#benefit" class="tab__link" role="tab" aria-selected="true">사은행사</a>
+                </li>
+                <li class="tab__item" role="presentation">
+                    <a href="#recommend" class="tab__link" role="tab" aria-selected="false">추천상품</a>
+                </li>
+                <li class="tab__item" role="presentation">
+                    <a href="#all" class="tab__link" role="tab" aria-selected="false">전체상품</a>
+                </li>
+            </ul>
+        </nav>
 
-    <main>
         <!-- 현대백화점 EXCLUSIVE 혜택 -->
-        <section class="exclusive-benefit">
-            <h3>현대백화점 EXCLUSIVE 혜택</h3>
-            <p>현대면세점에서만 드리는 기적같은 혜택</p>
+        <section class="benefit" id="benefit" aria-labelledby="benefit-title">
+            <h3 id="benefit-title" class="benefit__title">현대백화점 EXCLUSIVE 혜택</h3>
+            <p class="benefit__title-desc">현대면세점에서만 드리는 기적같은 혜택</p>
 
-            <article class="benefit-item">
-                <span class="event-num">Event 1</span>
-                <h4>현대면세점 X 아이오페 단독 행사</h4>
-                <p class="event-date">이벤트 기간 2025.01.01 ~ 2024.01.08</p>
-                <div class="item-list">
-                    <em class="badge">gift</em>
-                    <ul>
-                        <li>
-                            <span class="thumbnail">
-                                <!-- 재고소진시 .block 추가 -->
-                                <span class="sold-out">재고소진</span>
-                            </span>
-                            <p class="gift-free">
-                                <span>$60이상 구매시</span>
+            <!-- Event 1 -->
+            <article class="benefit__item" aria-labelledby="event1-title">
+                <div class="benefit__num" aria-hidden="true">
+                    <span class="benefit__num-tag"><em class="txt">Event</em><em class="num">1</em></span>
+                </div>
+
+                <h4 id="event1-title" class="benefit__item-title">현대면세점 X 아이오페 단독 행사</h4>
+                <p class="benefit__item-date">이벤트 기간 2025.01.01 ~ 2024.01.08</p>
+
+                <div class="benefit__list" role="list">
+                    <span class="benefit__badge">gift</span>
+                    <ul class="benefit__gift-list">
+                        <li class="benefit__gift-item">
+                            <figure class="benefit__thumb">
+                                <img src="https://placehold.co/100x100" alt="더클린랩 에이씨 듀 칼라민 토너 외 구성" />
+                                <span class="benefit__soldout show" role="status">재고소진</span>
+                            </figure>
+                            <p class="benefit__gift">
+                                <span class="benefit__amount">$60 이상 구매 시</span>
                                 <span>더클린랩 에이씨 듀 칼라민 토너 + 에센스 + 크림 + 진정 패드 증정</span>
                             </p>
                         </li>
@@ -64,39 +85,43 @@
                 </div>
             </article>
 
-            <article class="benefit-item">
-                <span class="event-num">Event 2</span>
-                <h4>금액대별 구매 사은품</h4>
-                <div class="item-list">
-                    <em class="badge">gift</em>
-                    <ul>
-                        <li>
-                            <span class="thumbnail">
-                                <!-- 재고소진시 .block 추가 -->
-                                <span class="sold-out">재고소진</span>
-                            </span>
-                            <p class="gift-free">
-                                <span class="txt-amount">$1이상 구매시</span>
+            <!-- Event 2 -->
+            <article class="benefit__item" aria-labelledby="event2-title">
+                <div class="benefit__num" aria-hidden="true">
+                    <span class="benefit__num-tag"><em class="txt">Event</em><em class="num">2</em></span>
+                </div>
+                <h4 id="event2-title" class="benefit__item-title">금액대별 구매 사은품</h4>
+
+                <div class="benefit__list">
+                    <span class="benefit__badge">gift</span>
+                    <ul class="benefit__gift-list">
+                        <li class="benefit__gift-item">
+                            <figure class="benefit__thumb">
+                                <img src="https://placehold.co/100x100" alt="$1 이상 구매 시 증정되는 샘플 세트" />
+                                <span class="benefit__soldout" role="status">재고소진</span>
+                            </figure>
+                            <p class="benefit__gift">
+                                <span class="benefit__amount">$1 이상 구매 시</span>
                                 <span>슈퍼바이탈 세럼 크림 듀오 샘플 증정</span>
                             </p>
                         </li>
-                        <li>
-                            <span class="thumbnail">
-                                <!-- 재고소진시 .block 추가 -->
-                                <span class="sold-out">재고소진</span>
-                            </span>
-                            <p class="gift-free">
-                                <span class="txt-amount">$50이상 구매시</span>
+                        <li class="benefit__gift-item">
+                            <figure class="benefit__thumb">
+                                <img src="https://placehold.co/100x100" alt="$50 이상 구매 시 에멀젼 및 소프너 증정" />
+                                <span class="benefit__soldout" role="status">재고소진</span>
+                            </figure>
+                            <p class="benefit__gift">
+                                <span class="benefit__amount">$50 이상 구매 시</span>
                                 <span>슈퍼바이탈 에멀젼 18ml + 소프너 18ml 증정</span>
                             </p>
                         </li>
-                        <li>
-                            <span class="thumbnail">
-                                <!-- 재고소진시 .block 추가 -->
-                                <span class="sold-out">재고소진</span>
-                            </span>
-                            <p class="gift-free">
-                                <span class="txt-amount">$80이상 구매시</span>
+                        <li class="benefit__gift-item">
+                            <figure class="benefit__thumb">
+                                <img src="https://placehold.co/100x100" alt="$80 이상 구매 시 슈퍼바이탈 5종 증정" />
+                                <span class="benefit__soldout show" role="status">재고소진</span>
+                            </figure>
+                            <p class="benefit__gift">
+                                <span class="benefit__amount">$80 이상 구매 시</span>
                                 <span>슈퍼바이탈 5종 증정</span>
                             </p>
                         </li>
@@ -106,225 +131,347 @@
         </section>
 
         <!-- 브랜드 로고 -->
-        <section class="brand-hall">
-            <div class="item">
-                <span class="thumbnail"><em class="blind">아이오페 로고 이미지</em></span>
-                <span class="item-txt">아이오페</span>
+        <section class="brand-hall" aria-labelledby="brand-title">
+            <h3 id="brand-title" class="brand__title">브랜드관</h3>
+            <div class="brand__list" role="list">
+                <div class="brand__item" role="listitem">
+                    <figure class="brand__thumb">
+                        <img src="./img/img-brand-iope.png" alt="아이오페 브랜드 로고" />
+                    </figure>
+                    <span class="brand__name">아이오페</span>
+                </div>
             </div>
         </section>
 
         <!-- 유의사항 -->
-        <section class="notice">
-            <h3>유의사항</h3>
-            <ul>
-                <li>사은품은 중복 증정이 되지 않습니다.</li>
-                <li>사은품은 디자인 및 구성이 임의로 증정되며, 선택할 수 없습니다.</li>
-                <li>사은품의 재고 소진 이후에도 해당 페이지와 관련 배너는 보여질 수 있습니다.</li>
+        <section class="notice" aria-labelledby="notice-title">
+            <h3 id="notice-title" class="notice__title">유의사항</h3>
+            <ul class="notice__list">
+                <li class="notice__item">한 ID 당 1일 1회 증정됩니다.</li>
+                <li class="notice__item">사은품은 중복 증정이 되지 않습니다.</li>
+                <li class="notice__item">사은품은 디자인 및 구성이 임의로 증정되며 선택할 수 없습니다.</li>
+                <li class="notice__item mark">사은품의 재고 소진 이후에도 해당 페이지는 노출될 수 있습니다.</li>
             </ul>
-
-            <!-- 바로구매 버튼 -->
-            <div class="cta-area">
-                <button type="button" class="more-event-page">더 많은 사은행사가 궁금하다면</button>
+            <div class="notice__cta">
+                <button type="button" class="notice__btn">더 많은 사은행사가 궁금하다면</button>
             </div>
         </section>
-
 
         <!-- 추천상품 -->
-        <section class="recommended-products">
-            <h3>추천 상품</h3>
-            <ul class="product-list">
-                <!-- item1 -->
-                <li class="product-item">
-                    <div class="product-thumb">
-                        <button type="button" class="shopping-cart"><em class="blind">장바구니</em></button>
-                    </div>
-                    <p class="product-brand">바비브라운</p>
-                    <p class="product-brand-info">인텐시브 세럼 파운데이션 SPF 40 #Po...</p>
-                    <div class="product-discount-info">
-                        <p class="price-origin">
-                            <span class="discount-percent">40%</span>
-                            <del class="price">$39</del>
-                        </p>
-                        <p class="final-price">$61</p>
-                    </div>
-                </li>
-                <!-- item2 -->
-                <li class="product-item">
-                    <div class="product-thumb">
-                        <button type="button" class="shopping-cart"><em class="blind">장바구니</em></button>
-                    </div>
-                    <p class="product-brand">바비브라운</p>
-                    <p class="product-brand-info">인텐시브 세럼 파운데이션 SPF 40 #Po...</p>
-                    <div class="product-discount-info">
-                        <p class="price-origin">
-                            <span class="discount-percent">40%</span>
-                            <del class="price">$39</del>
-                        </p>
-                        <p class="final-price">$61</p>
-                    </div>
-                </li>
-                <!-- item3 -->
-                <li class="product-item">
-                    <div class="product-thumb">
-                        <button type="button" class="shopping-cart"><em class="blind">장바구니</em></button>
-                    </div>
-                    <p class="product-brand">바비브라운</p>
-                    <p class="product-brand-info">인텐시브 세럼 파운데이션 SPF 40 #Po...</p>
-                    <div class="product-discount-info">
-                        <p class="price-origin">
-                            <span class="discount-percent">40%</span>
-                            <del class="price">$39</del>
-                        </p>
-                        <p class="final-price">$61</p>
-                    </div>
-                </li>
-            </ul>
-        </section>
+        <section class="recommend" id="recommend" aria-labelledby="recommend-title">
+            <h3 id="recommend-title" class="recommend__title">추천상품</h3>
 
-        <!-- 이런 상품은 어때요 -->
-        <section class="suggested-products">
-            <div class="tab">
-                <ul>
-                    <li class="active"><a href="#">아우구스티누스 바더</a></li>
-                    <li><a href="#">아우구스티누스 바더</a></li>
+            <div class="recommend__swiper product-swiper swiper" aria-label="추천 상품 슬라이드">
+                <ul class="swiper-wrapper" role="list">
+                    <li class="product-card swiper-slide" role="listitem">
+                        <div class="product-card__thumb">
+                            <a href="javascript:" class="product-card__link" aria-label="바비브라운 인텐시브 세럼 파운데이션 상세보기">
+                                <img src="https://placehold.co/120x120" alt="바비브라운 인텐시브 세럼 파운데이션 상품 이미지" />
+                            </a>
+                            <button type="button" class="product-card__cart-btn" aria-label="장바구니 담기"></button>
+                        </div>
+                        <a href="javascript:" class="product-card__link">
+                            <p class="product-card__brand">바비브라운</p>
+                            <p class="product-card__name">인텐시브 세럼 파운데이션 SPF 40 #Power waterproof</p>
+                            <div class="product-card__discount">
+                                <p class="product-card__origin"><span class="product-card__percent">40%</span><del>$39</del></p>
+                                <p class="product-card__final">$61</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="product-card swiper-slide" role="listitem">
+                        <div class="product-card__thumb">
+                            <a href="javascript:" class="product-card__link" aria-label="바비브라운 인텐시브 세럼 파운데이션 상세보기">
+                                <img src="https://placehold.co/120x120" alt="바비브라운 인텐시브 세럼 파운데이션 상품 이미지" />
+                            </a>
+                            <button type="button" class="product-card__cart-btn" aria-label="장바구니 담기"></button>
+                        </div>
+                        <a href="javascript:" class="product-card__link">
+                            <p class="product-card__brand">바비브라운</p>
+                            <p class="product-card__name">인텐시브 세럼 파운데이션 SPF 40 #Power waterproof</p>
+                            <div class="product-card__discount">
+                                <p class="product-card__origin"><span class="product-card__percent">40%</span><del>$39</del></p>
+                                <p class="product-card__final">$61</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="product-card swiper-slide" role="listitem">
+                        <div class="product-card__thumb">
+                            <a href="javascript:" class="product-card__link" aria-label="바비브라운 인텐시브 세럼 파운데이션 상세보기">
+                                <img src="https://placehold.co/120x120" alt="바비브라운 인텐시브 세럼 파운데이션 상품 이미지" />
+                            </a>
+                            <button type="button" class="product-card__cart-btn" aria-label="장바구니 담기"></button>
+                        </div>
+                        <a href="javascript:" class="product-card__link">
+                            <p class="product-card__brand">바비브라운</p>
+                            <p class="product-card__name">인텐시브 세럼 파운데이션 SPF 40 #Power waterproof</p>
+                            <div class="product-card__discount">
+                                <p class="product-card__origin"><span class="product-card__percent">40%</span><del>$39</del></p>
+                                <p class="product-card__final">$61</p>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
             </div>
-            <h3>이런 상품은 어떠세요?</h3>
-            <ul class="product-list">
-                <li class="product-item">
-                    <div class="product-thumb">
-                        <button type="button" class="shopping-cart"><em class="blind">장바구니</em></button>
-                    </div>
-                    <p class="product-brand">바비브라운</p>
-                    <p class="product-brand-info">인텐시브 세럼 파운데이션 SPF 40 #Po...</p>
-                    <div class="product-discount-info">
-                        <p class="price-origin">
-                            <span class="discount-percent">40%</span>
-                            <del class="price">$39</del>
-                        </p>
-                        <p class="final-price">$61</p>
-                    </div>
-                </li>
-                <li class="product-item">
-                    <div class="product-thumb">
-                        <button type="button" class="shopping-cart"><em class="blind">장바구니</em></button>
-                    </div>
-                    <p class="product-brand">바비브라운</p>
-                    <p class="product-brand-info">인텐시브 세럼 파운데이션 SPF 40 #Po...</p>
-                    <div class="product-discount-info">
-                        <p class="price-origin">
-                            <span class="discount-percent">40%</span>
-                            <del class="price">$39</del>
-                        </p>
-                        <p class="final-price">$61</p>
-                    </div>
-                </li>
-                <li class="product-item">
-                    <div class="product-thumb">
-                        <button type="button" class="shopping-cart"><em class="blind">장바구니</em></button>
-                    </div>
-                    <p class="product-brand">바비브라운</p>
-                    <p class="product-brand-info">인텐시브 세럼 파운데이션 SPF 40 #Po...</p>
-                    <div class="product-discount-info">
-                        <p class="price-origin">
-                            <span class="discount-percent">40%</span>
-                            <del class="price">$39</del>
-                        </p>
-                        <p class="final-price">$61</p>
-                    </div>
-                </li>
-            </ul>
+        </section>
+        
+        <!-- 이런 상품은 어떠세요 -->
+        <section class="suggest" aria-labelledby="suggest-title">
+            <!-- 그룹탭 -->
+            <div class="tab-group" role="tablist">
+                <ul class="tab-group__list">
+                    <li class="tab-group__item tab-group__item--active" role="presentation">
+                        <button role="tab" aria-selected="true" class="tab-group__link">아우구스티누스 바더</button>
+                    </li>
+                    <li class="tab-group__item" role="presentation">
+                        <button role="tab" aria-selected="false" class="tab-group__link">아우구스티누스 바더</button>
+                    </li>
+                </ul>
+            </div>
+
+            <h3 id="suggest-title" class="suggest__title">이런 상품은 어떠세요?</h3>
+
+            <div class="suggest__swiper product-swiper swiper" aria-label="추천 상품 목록">
+                <ul class="swiper-wrapper">
+                    <li class="product-card swiper-slide">
+                        <div class="product-card__thumb">
+                            <a href="#" class="product-card__link">
+                                <img src="https://placehold.co/120x120" alt="바비브라운 인텐시브 세럼 파운데이션 상품 이미지">
+                            </a>
+                            <button type="button" class="product-card__cart-btn" aria-label="장바구니 담기"></button>
+                        </div>
+                        <a href="#" class="product-card__link">
+                            <p class="product-card__brand">바비브라운</p>
+                            <p class="product-card__name">인텐시브 세럼 파운데이션 SPF 40 #Power waterproof</p>
+            
+            
+                            <div class="product-card__discount">
+                                <p class="product-card__origin">
+                                    <span class="product-card__percent">40%</span>
+                                    <del class="product-card__price">$39</del>
+                                </p>
+                                <p class="product-card__final">$61</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="product-card swiper-slide">
+                        <div class="product-card__thumb">
+                            <a href="#" class="product-card__link">
+                                <img src="https://placehold.co/120x120" alt="바비브라운 인텐시브 세럼 파운데이션 상품 이미지">
+                            </a>
+                            <button type="button" class="product-card__cart-btn" aria-label="장바구니 담기"></button>
+                        </div>
+                        <a href="#" class="product-card__link">
+                            <p class="product-card__brand">바비브라운</p>
+                            <p class="product-card__name">인텐시브 세럼 파운데이션 SPF 40 #Power waterproof</p>
+            
+            
+                            <div class="product-card__discount">
+                                <p class="product-card__origin">
+                                    <span class="product-card__percent">40%</span>
+                                    <del class="product-card__price">$39</del>
+                                </p>
+                                <p class="product-card__final">$61</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="product-card swiper-slide">
+                        <div class="product-card__thumb">
+                            <a href="#" class="product-card__link">
+                                <img src="https://placehold.co/120x120" alt="바비브라운 인텐시브 세럼 파운데이션 상품 이미지">
+                            </a>
+                            <button type="button" class="product-card__cart-btn" aria-label="장바구니 담기"></button>
+                        </div>
+                        <a href="#" class="product-card__link">
+                            <p class="product-card__brand">바비브라운</p>
+                            <p class="product-card__name">인텐시브 세럼 파운데이션 SPF 40 #Power waterproof</p>
+            
+            
+                            <div class="product-card__discount">
+                                <p class="product-card__origin">
+                                    <span class="product-card__percent">40%</span>
+                                    <del class="product-card__price">$39</del>
+                                </p>
+                                <p class="product-card__final">$61</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </section>
 
         <!-- 더보기 상품 리스트 -->
-        <section class="more-products">
-            <div class="product-header">
-                <button class="filter-btn">FILTER</button>
-                <div class="count">총 1,234건</div>
-
-                <div class="sort-area">
-                    <button class="sort-item">품절</button>
-                    <button class="sort-item">베스트순</button>
-                    <button class="sort-item more"></button>
+        <section class="more" aria-labelledby="more-title">
+            <h3 id="more-title" class="sr-only">더보기 상품 리스트</h3>
+            <div class="more__header">
+                <div class="more__count"><span class="txt">총</span><span class="num">1,234</span>건</div>
+                
+                <div class="more-sort" aria-label="상품 정렬 및 필터">
+                    <div class="more-sort__filter">
+                        <div class="more-sort__label">
+                            <button type="button" class="more-sort__info-icon" aria-label="정보 보기"></button>
+                            <span class="more-sort__text">품절</span>
+                        </div>
+                        <label class="more-sort__toggle toggle">
+                            <span class="sr-only">품절 상품 포함 여부</span>
+                            <input type="checkbox" class="toggle__input" />
+                            <span class="toggle__slider" aria-hidden="true"></span>
+                        </label>
+                    </div>                
+                
+                    <div class="more-sort__select">
+                        <label class="sr-only" for="sort-select">정렬 기준 선택</label>
+                        <select id="sort-select">
+                            <option value="베스트순">베스트순</option>
+                        </select>
+                    </div>
+                    <button class="more__filter-btn" aria-label="필터 열기"></button>
                 </div>
             </div>
-            <ul class="product-list">
-                <li class="product-item">
-                    <div class="product-thumb">
-                        <button type="button" class="play-btn"><em class="blind">상품 영상 재생 버튼</em></button>
-                        <button type="button" class="shopping-cart"><em class="blind">장바구니</em></button>
+
+            <ul class="more__list">
+                <li class="product-card">
+                    <div class="product-card__thumb">
+                        <a href="#" class="product-card__link">
+                            <img src="https://placehold.co/120x120" alt="바비브라운 인텐시브 세럼 파운데이션 상품 이미지">
+                        </a>
+                        <button type="button" class="product-card__play-btn" aria-label="상품 영상 재생"></button>
+                        <button type="button" class="product-card__cart-btn" aria-label="장바구니 담기"></button>
                     </div>
-                    <p class="product-brand">바비브라운</p>
-                    <p class="product-md-keyword">MD 키워드 최대 2줄 노출 가능 MD 키워드 최대 2줄 노출 가능</p>
-                    <p class="product-brand-info">인텐시브 세럼 파운데이션 SPF 40 #Po...</p>
-                    <div class="product-discount-info">
-                        <p class="price-origin">
-                            <span class="discount-percent">40%</span>
-                            <del class="price">$39</del>
-                        </p>
-                        <p class="final-price">$61</p>
-                    </div>
-                    <div class="tags">
-                        <span>세일</span>
-                        <span>베스트</span>
-                    </div>
+                    <a href="#" class="product-card__link">
+                        <p class="product-card__brand">바비브라운</p>
+                        <p class="product-card__keyword">MD 키워드 최대 2줄 노출 가능 MD 키워드 최대 2줄 노출 가능</p>
+                        <p class="product-card__name">인텐시브 세럼 파운데이션 SPF 40 #Power waterproof</p>
+                
+                
+                        <div class="product-card__discount">
+                            <p class="product-card__origin">
+                                <span class="product-card__percent">40%</span>
+                                <del class="product-card__price">$39</del>
+                            </p>
+                            <p class="product-card__final">$61</p>
+                        </div>
+                        <ul class="product-card__tags">
+                            <li class="product-card__tag">세일</li>
+                            <li class="product-card__tag">베스트</li>
+                        </ul>
+                    </a>
                 </li>
-                <li class="product-item">
-                    <div class="product-thumb">
-                        <button type="button" class="play-btn"><em class="blind">상품 영상 재생 버튼</em></button>
-                        <button type="button" class="shopping-cart"><em class="blind">장바구니</em></button>
+                <li class="product-card">
+                    <div class="product-card__thumb">
+                        <a href="#" class="product-card__link">
+                            <img src="https://placehold.co/120x120" alt="바비브라운 인텐시브 세럼 파운데이션 상품 이미지">
+                        </a>
+                        <button type="button" class="product-card__play-btn" aria-label="상품 영상 재생"></button>
+                        <button type="button" class="product-card__cart-btn" aria-label="장바구니 담기"></button>
                     </div>
-                    <p class="product-brand">바비브라운</p>
-                    <p class="product-md-keyword">MD 키워드 최대 2줄 노출 가능 MD 키워드 최대 2줄 노출 가능</p>
-                    <p class="product-brand-info">인텐시브 세럼 파운데이션 SPF 40 #Po...</p>
-                    <div class="product-discount-info">
-                        <p class="price-origin">
-                            <span class="discount-percent">40%</span>
-                            <del class="price">$39</del>
-                        </p>
-                        <p class="final-price">$61</p>
-                    </div>
-                    <div class="tags">
-                        <span>세일</span>
-                        <span>베스트</span>
-                    </div>
+                    <a href="#" class="product-card__link">
+                        <p class="product-card__brand">바비브라운</p>
+                        <p class="product-card__keyword">MD 키워드 최대 2줄 노출 가능 MD 키워드 최대 2줄 노출 가능</p>
+                        <p class="product-card__name">인텐시브 세럼 파운데이션 SPF 40 #Power waterproof</p>
+                
+                
+                        <div class="product-card__discount">
+                            <p class="product-card__origin">
+                                <span class="product-card__percent">40%</span>
+                                <del class="product-card__price">$39</del>
+                            </p>
+                            <p class="product-card__final">$61</p>
+                        </div>
+                        <ul class="product-card__tags">
+                            <li class="product-card__tag">세일</li>
+                            <li class="product-card__tag">베스트</li>
+                        </ul>
+                    </a>
                 </li>
-                <li class="product-item">
-                    <div class="product-thumb">
-                        <button type="button" class="play-btn"><em class="blind">상품 영상 재생 버튼</em></button>
-                        <button type="button" class="shopping-cart"><em class="blind">장바구니</em></button>
+                <li class="product-card">
+                    <div class="product-card__thumb">
+                        <a href="#" class="product-card__link">
+                            <img src="https://placehold.co/120x120" alt="바비브라운 인텐시브 세럼 파운데이션 상품 이미지">
+                        </a>
+                        <button type="button" class="product-card__play-btn" aria-label="상품 영상 재생"></button>
+                        <button type="button" class="product-card__cart-btn" aria-label="장바구니 담기"></button>
                     </div>
-                    <p class="product-brand">바비브라운</p>
-                    <p class="product-md-keyword">MD 키워드 최대 2줄 노출 가능 MD 키워드 최대 2줄 노출 가능</p>
-                    <p class="product-brand-info">인텐시브 세럼 파운데이션 SPF 40 #Po...</p>
-                    <div class="product-discount-info">
-                        <p class="price-origin">
-                            <span class="discount-percent">40%</span>
-                            <del class="price">$39</del>
-                        </p>
-                        <p class="final-price">$61</p>
+                    <a href="#" class="product-card__link">
+                        <p class="product-card__brand">바비브라운</p>
+                        <p class="product-card__keyword">MD 키워드 최대 2줄 노출 가능 MD 키워드 최대 2줄 노출 가능</p>
+                        <p class="product-card__name">인텐시브 세럼 파운데이션 SPF 40 #Power waterproof</p>
+                
+                
+                        <div class="product-card__discount">
+                            <p class="product-card__origin">
+                                <span class="product-card__percent">40%</span>
+                                <del class="product-card__price">$39</del>
+                            </p>
+                            <p class="product-card__final">$61</p>
+                        </div>
+                        <ul class="product-card__tags">
+                            <li class="product-card__tag">세일</li>
+                            <li class="product-card__tag">베스트</li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="product-card">
+                    <div class="product-card__thumb">
+                        <a href="#" class="product-card__link">
+                            <img src="https://placehold.co/120x120" alt="바비브라운 인텐시브 세럼 파운데이션 상품 이미지">
+                        </a>
+                        <button type="button" class="product-card__play-btn" aria-label="상품 영상 재생"></button>
+                        <button type="button" class="product-card__cart-btn" aria-label="장바구니 담기"></button>
                     </div>
-                    <div class="tags">
-                        <span>세일</span>
-                        <span>베스트</span>
-                    </div>
+                    <a href="#" class="product-card__link">
+                        <p class="product-card__brand">바비브라운</p>
+                        <!-- <p class="product-card__keyword">MD 키워드 최대 2줄 노출 가능 MD 키워드 최대 2줄 노출 가능</p> -->
+                        <p class="product-card__name">인텐시브 세럼 파운데이션 SPF 40 #Power waterproof</p>
+                
+                
+                        <div class="product-card__discount">
+                            <p class="product-card__origin">
+                                <span class="product-card__percent">40%</span>
+                                <del class="product-card__price">$39</del>
+                            </p>
+                            <p class="product-card__final">$61</p>
+                        </div>
+                        <ul class="product-card__tags">
+                            <li class="product-card__tag">세일</li>
+                            <li class="product-card__tag">베스트</li>
+                        </ul>
+                    </a>
                 </li>
             </ul>
         </section>
     </main>
 
     <!-- 푸터 -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-notice">
-                <a href="#">[공지사항] 로즈몽 外 4개 브랜드 적립금 사용안내</a>
-                <a href="#"><span class="blind"></span>공지사항 더보기</a>
-            </div>
-
-            <p class="copyright">COPYRIGHT © HYUNDAI DF Co,. Ltd. ALL RIGHTS RESERVED.</p>
+    <footer class="footer" role="contentinfo">
+        <div class="footer__inner">
+            <div class="footer__notice" aria-label="공지사항">
+                <a href="#" class="footer__notice-link">[공지사항] 로즈몽 外 4개 브랜드 적립금 사용안내</a>
+                <a href="#" class="footer__notice-more" aria-label="공지사항 더보기"></a>
+            </div>    
+    
+            <p class="footer__copyright" aria-label="저작권 정보">
+                COPYRIGHT © HYUNDAI DF Co,. Ltd. ALL RIGHTS RESERVED.
+            </p>
         </div>
     </footer>
 
+    <!-- swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script>
+        // 추천상품
+        const swiper = new Swiper('.recommend__swiper', {
+            slidesPerView: 2.5,
+            spaceBetween: 16,
+        });
+
+        // 이런 상품은 어떠세요?
+        // 추천상품
+        const swiper2 = new Swiper('.suggest__swiper', {
+            slidesPerView: 2.5,
+            spaceBetween: 16,
+        });
+    </script>
 </body>
 
 </html>

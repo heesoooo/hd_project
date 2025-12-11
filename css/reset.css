@@ -1,0 +1,111 @@
+/* font */
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	src: url(../font//NotoSansKR-Light.woff2) format('woff2'), url(../font//NotoSansKR-Light.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../font//NotoSansKR-Regular.woff2) format('woff2'), url(../font//NotoSansKR-Regular.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	src: url(../font//NotoSansKR-Medium.woff2) format('woff2'), url(../font//NotoSansKR-Medium.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	src: url(../font//NotoSansKR-Bold.woff2) format('woff2'), url(../font/NotoSansKR-Bold.woff) format('woff');
+}
+
+ /* color common */
+ :root {
+    --color-white:#fff;
+    --color-black:#000;
+    --color-gray-100:#eef0f2;
+    --color-gray-200:#dde0e5;
+    --color-gray-300:#ccd1d8;
+    --color-gray-400:#abb2be;
+    --color-gray-500:#5c6677;
+    --color-gray-600:#3d444f;
+    --color-gray-700:#788497;
+    --color-dark:#1b1e23;
+    --color-brand-primary:#ea2869;
+    --color-brand-alert:#ea2829;
+    --color-brown:#a58768;
+    --color-brown-light:#b1a59a;
+}
+
+/* reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	font-family: 'Noto Sans KR', '본고딕', 'sans-serif', sans-serif;
+	vertical-align: top;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	background-color: transparent;
+}
+
+button, [type="button"], [type="reset"], [type="submit"], input, textarea, select {
+	font: inherit;
+	color: inherit;
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.sr-only {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0 0 0 0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
